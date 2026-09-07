@@ -1,0 +1,327 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 660" width="100%" height="100%" style="font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;">
+  <defs>
+    <!-- Filtros de sombra suave -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0b1b33" flood-opacity="0.10" />
+    </filter>
+    <filter id="topCardShadow" x="-15%" y="-15%" width="130%" height="135%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#001A49" flood-opacity="0.22" />
+    </filter>
+
+    <!-- Degradados Principales -->
+    <linearGradient id="gradDirector" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001A49" />
+      <stop offset="100%" stop-color="#0a2e63" />
+    </linearGradient>
+
+    <!-- Gerentes (Azul Corporativo con Degradado Sutil) -->
+    <linearGradient id="gradGerenciaAdmin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2f5a" />
+      <stop offset="100%" stop-color="#164d8f" />
+    </linearGradient>
+
+    <linearGradient id="gradGerenciaOps" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2f5a" />
+      <stop offset="100%" stop-color="#1a547a" />
+    </linearGradient>
+
+    <!-- Tarjetas de Área / Departamento -->
+    <linearGradient id="gradCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+
+    <!-- Dorado Metálico -->
+    <linearGradient id="gradGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3C649" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#AA820A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo sutil con bordes redondeados -->
+  <rect width="1100" height="660" rx="16" fill="#f8fafc" />
+  
+  <!-- Marca de agua sutil decorativa -->
+  <g opacity="0.03" transform="translate(550, 330)">
+    <circle r="270" fill="none" stroke="#001A49" stroke-width="40" />
+    <circle r="190" fill="none" stroke="#001A49" stroke-width="20" stroke-dasharray="20 15" />
+  </g>
+
+  <!-- ================= LÍNEAS DE CONEXIÓN JERÁRQUICA ================= -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Tronco Central: Director General a Gerencias -->
+    <path d="M 550 110 L 550 148" stroke="#001A49" stroke-width="3" />
+    <path d="M 270 148 L 830 148" stroke="#001A49" stroke-width="3" />
+    
+    <!-- Bajadas a Gerencias (Centradas exactamente a x=270 y x=830) -->
+    <path d="M 270 148 L 270 176" stroke="#164d8f" stroke-width="3" />
+    <path d="M 830 148 L 830 176" stroke="#1a547a" stroke-width="3" />
+
+    <!-- RAMA ADMINISTRATIVA: De Gerencia (salida en y=254) a Columnas -->
+    <path d="M 270 254 L 270 286" stroke="#164d8f" stroke-width="2.5" />
+    <path d="M 152 286 L 387 286" stroke="#94a3b8" stroke-width="2.5" />
+    <!-- Columna Izquierda Admin (Centro x=152) -->
+    <path d="M 152 286 L 152 560" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 3" />
+    <!-- Columna Derecha Admin (Centro x=387) -->
+    <path d="M 387 286 L 387 560" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 3" />
+
+    <!-- RAMA OPERACIONES: De Gerencia (salida en y=254) a Columnas -->
+    <path d="M 830 254 L 830 286" stroke="#1a547a" stroke-width="2.5" />
+    <path d="M 717 286 L 947 286" stroke="#94a3b8" stroke-width="2.5" />
+    <!-- Columna Izquierda Operaciones (Centro x=717) -->
+    <path d="M 717 286 L 717 485" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 3" />
+    <!-- Columna Derecha Operaciones (Centro x=947) -->
+    <path d="M 947 286 L 947 485" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 3" />
+  </g>
+
+  <!-- Puntos Nodos de Unión -->
+  <circle cx="550" cy="148" r="4.5" fill="#001A49" />
+  <circle cx="270" cy="148" r="4.5" fill="#164d8f" />
+  <circle cx="830" cy="148" r="4.5" fill="#1a547a" />
+  <circle cx="270" cy="286" r="4" fill="#164d8f" />
+  <circle cx="830" cy="286" r="4" fill="#1a547a" />
+
+
+  <!-- ================= NIVEL 1: DIRECCIÓN GENERAL ================= -->
+  <!-- Centrado en x=550 (x=410, ancho=280) -->
+  <g transform="translate(410, 25)" filter="url(#topCardShadow)">
+    <rect x="-3" y="-3" width="286" height="88" rx="15" fill="url(#gradGold)" />
+    <rect x="0" y="0" width="280" height="82" rx="12" fill="url(#gradDirector)" />
+    
+    <!-- Ícono Distintivo Dirección: Timón de Navegación Estratégica -->
+    <g transform="translate(18, 20)">
+      <circle cx="21" cy="21" r="21" fill="#ffffff" fill-opacity="0.12" />
+      <g stroke="url(#gradGold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <!-- Rueda exterior -->
+        <circle cx="21" cy="21" r="10" />
+        <!-- Rayos y manijas del timón (8 direcciones) -->
+        <line x1="21" y1="5" x2="21" y2="37" />
+        <line x1="5" y1="21" x2="37" y2="21" />
+        <line x1="9.7" y1="9.7" x2="32.3" y2="32.3" />
+        <line x1="32.3" y1="9.7" x2="9.7" y2="32.3" />
+      </g>
+      <!-- Detalles en los mangos del timón -->
+      <circle cx="21" cy="5" r="1.5" fill="url(#gradGold)" />
+      <circle cx="21" cy="37" r="1.5" fill="url(#gradGold)" />
+      <circle cx="5" cy="21" r="1.5" fill="url(#gradGold)" />
+      <circle cx="37" cy="21" r="1.5" fill="url(#gradGold)" />
+      <circle cx="9.7" cy="9.7" r="1.5" fill="url(#gradGold)" />
+      <circle cx="32.3" cy="32.3" r="1.5" fill="url(#gradGold)" />
+      <circle cx="32.3" cy="9.7" r="1.5" fill="url(#gradGold)" />
+      <circle cx="9.7" cy="32.3" r="1.5" fill="url(#gradGold)" />
+      <!-- Núcleo central -->
+      <circle cx="21" cy="21" r="3.5" fill="url(#gradGold)" />
+      <circle cx="21" cy="21" r="1.2" fill="#001A49" />
+    </g>
+
+    <!-- Textos con amplio padding -->
+    <text x="74" y="32" font-size="10.5" font-weight="600" fill="#F3C649" letter-spacing="1.5">DIRECCIÓN ESTRATÉGICA</text>
+    <text x="74" y="56" font-size="18" font-weight="700" fill="#ffffff">Director General</text>
+  </g>
+
+
+  <!-- ================= NIVEL 2: GERENCIAS ================= -->
+  <!-- Ancho expandido a 270px para dar padding holgado a cada texto y centrado exacto -->
+
+  <!-- GERENTE ADMINISTRATIVO: Centrado en x=270 (x=135, ancho=270) -->
+  <g transform="translate(135, 176)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="270" height="78" rx="12" fill="url(#gradGerenciaAdmin)" stroke="#3b82f6" stroke-width="1.8" />
+    
+    <!-- Ícono Maletín / Administración -->
+    <g transform="translate(16, 17)">
+      <rect x="0" y="0" width="44" height="44" rx="10" fill="#ffffff" fill-opacity="0.14" />
+      <path d="M14 16 L30 16 C31.1 16 32 16.9 32 18 L32 30 C32 31.1 31.1 32 30 32 L14 32 C12.9 32 12 31.1 12 30 L12 18 C12 16.9 12.9 16 14 16 Z" fill="none" stroke="#ffffff" stroke-width="2" />
+      <path d="M18 16 L18 13 C18 11.9 18.9 11 20 11 L24 11 C25.1 11 26 11.9 26 13 L26 16" fill="none" stroke="#ffffff" stroke-width="2" />
+      <path d="M12 22 L32 22" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.5" />
+    </g>
+    
+    <!-- Textos con padding regular y seguro -->
+    <text x="72" y="32" font-size="10" font-weight="600" fill="#93c5fd" letter-spacing="1.2">ÁREA ADMINISTRATIVA</text>
+    <text x="72" y="54" font-size="14.5" font-weight="700" fill="#ffffff">Gerente Administrativo</text>
+  </g>
+
+  <!-- GERENTE DE OPERACIONES: Centrado en x=830 (x=695, ancho=270) -->
+  <g transform="translate(695, 176)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="270" height="78" rx="12" fill="url(#gradGerenciaOps)" stroke="#38bdf8" stroke-width="1.8" />
+    
+    <!-- Ícono Transporte / Operaciones -->
+    <g transform="translate(16, 17)">
+      <rect x="0" y="0" width="44" height="44" rx="10" fill="#ffffff" fill-opacity="0.14" />
+      <path d="M12 17 L24 17 L28 23 L32 23 L32 29 L12 29 Z" fill="none" stroke="#ffffff" stroke-width="2" />
+      <circle cx="17" cy="29" r="2.5" fill="#ffffff" />
+      <circle cx="27" cy="29" r="2.5" fill="#ffffff" />
+      <path d="M24 19 L24 23 L28 23" fill="none" stroke="#ffffff" stroke-width="1.5" />
+    </g>
+    
+    <!-- Textos con padding regular y seguro -->
+    <text x="72" y="32" font-size="10" font-weight="600" fill="#7dd3fc" letter-spacing="1.2">ÁREA OPERATIVA</text>
+    <text x="72" y="54" font-size="14.5" font-weight="700" fill="#ffffff">Gerente de Operaciones</text>
+  </g>
+
+
+  <!-- ================= NIVEL 3: DEPARTAMENTOS ADMINISTRATIVOS ================= -->
+  <!-- Columna 1 Admin: Finanzas, Contabilidad, Compras (Ancho: 215px) -->
+
+  <!-- FINANZAS -->
+  <g transform="translate(45, 320)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="215" height="66" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="66" rx="2" fill="#2563eb" />
+    <g transform="translate(14, 16)">
+      <circle cx="17" cy="17" r="17" fill="#eff6ff" />
+      <path d="M11 22 L15 17 L19 20 L24 13 M24 13 L20 13 M24 13 L24 17" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+    <text x="58" y="36" font-size="14" font-weight="600" fill="#0f172a">Finanzas</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">Gestión y presupuestos</text>
+  </g>
+
+  <!-- CONTABILIDAD -->
+  <g transform="translate(45, 405)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="215" height="66" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="66" rx="2" fill="#2563eb" />
+    <g transform="translate(14, 16)">
+      <circle cx="17" cy="17" r="17" fill="#eff6ff" />
+      <rect x="11" y="9" width="12" height="15" rx="1.5" fill="none" stroke="#2563eb" stroke-width="1.8" />
+      <line x1="13" y1="13" x2="21" y2="13" stroke="#2563eb" stroke-width="1.5" />
+      <circle cx="14" cy="17" r="1" fill="#2563eb" />
+      <circle cx="17" cy="17" r="1" fill="#2563eb" />
+      <circle cx="20" cy="17" r="1" fill="#2563eb" />
+      <circle cx="14" cy="20" r="1" fill="#2563eb" />
+      <circle cx="17" cy="20" r="1" fill="#2563eb" />
+      <circle cx="20" cy="20" r="1" fill="#2563eb" />
+    </g>
+    <text x="58" y="36" font-size="14" font-weight="600" fill="#0f172a">Contabilidad</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">Control fiscal y registros</text>
+  </g>
+
+  <!-- COMPRAS -->
+  <g transform="translate(45, 490)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="215" height="66" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="66" rx="2" fill="#2563eb" />
+    <g transform="translate(14, 16)">
+      <circle cx="17" cy="17" r="17" fill="#eff6ff" />
+      <path d="M11 11 L14 11 L16 21 L23 21 L25 14 L15 14" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="17" cy="23" r="1.5" fill="#2563eb" />
+      <circle cx="22" cy="23" r="1.5" fill="#2563eb" />
+    </g>
+    <text x="58" y="36" font-size="14" font-weight="600" fill="#0f172a">Compras</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">Insumos y proveedores</text>
+  </g>
+
+
+  <!-- Columna 2 Admin: Ventas, Recursos Humanos, Personal Administrativo (Ancho: 225px) -->
+
+  <!-- VENTAS -->
+  <g transform="translate(275, 320)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="225" height="66" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="66" rx="2" fill="#3b82f6" />
+    <g transform="translate(14, 16)">
+      <circle cx="17" cy="17" r="17" fill="#eff6ff" />
+      <path d="M12 21 L16 16 L20 18 L24 12" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" />
+      <rect x="11" y="11" width="13" height="13" rx="2" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.4" />
+    </g>
+    <text x="58" y="36" font-size="14" font-weight="600" fill="#0f172a">Ventas</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">Atención a clientes</text>
+  </g>
+
+  <!-- RECURSOS HUMANOS -->
+  <g transform="translate(275, 405)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="225" height="66" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="66" rx="2" fill="#3b82f6" />
+    <g transform="translate(14, 16)">
+      <circle cx="17" cy="17" r="17" fill="#eff6ff" />
+      <circle cx="15" cy="15" r="3.5" fill="none" stroke="#3b82f6" stroke-width="1.8" />
+      <path d="M10 23 C10 20.5 12.5 19 15 19 C17.5 19 20 20.5 20 23" fill="none" stroke="#3b82f6" stroke-width="1.8" />
+      <circle cx="22" cy="15" r="2.5" fill="none" stroke="#3b82f6" stroke-width="1.4" stroke-opacity="0.6" />
+      <path d="M20 22 C20.5 20.8 21.8 20 23 20" fill="none" stroke="#3b82f6" stroke-width="1.4" stroke-opacity="0.6" />
+    </g>
+    <text x="58" y="36" font-size="14" font-weight="600" fill="#0f172a">Recursos Humanos</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">Talento y bienestar</text>
+  </g>
+
+  <!-- PERSONAL ADMINISTRATIVO (Con amplio padding en 225px de ancho) -->
+  <g transform="translate(275, 490)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="225" height="66" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="66" rx="2" fill="#3b82f6" />
+    <g transform="translate(14, 16)">
+      <circle cx="17" cy="17" r="17" fill="#eff6ff" />
+      <rect x="12" y="10" width="11" height="15" rx="1.5" fill="none" stroke="#3b82f6" stroke-width="1.8" />
+      <line x1="15" y1="14" x2="20" y2="14" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="15" y1="17" x2="20" y2="17" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="15" y1="20" x2="18" y2="20" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+    </g>
+    <text x="58" y="36" font-size="13" font-weight="600" fill="#0f172a">Personal Administrativo</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">Soporte documental</text>
+  </g>
+
+
+  <!-- ================= NIVEL 3: DEPARTAMENTOS OPERATIVOS ================= -->
+  <!-- Columna 1 Operaciones: Monitoreo, Mantenimiento (Ancho: 215px) -->
+
+  <!-- MONITOREO -->
+  <g transform="translate(610, 320)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="215" height="74" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="74" rx="2" fill="#0284c7" />
+    <g transform="translate(14, 20)">
+      <circle cx="17" cy="17" r="17" fill="#f0f9ff" />
+      <path d="M17 10 L25 13 L25 18 C25 23 17 26 17 26 C17 26 9 23 9 18 L9 13 Z" fill="none" stroke="#0284c7" stroke-width="1.8" />
+      <circle cx="17" cy="17" r="2.5" fill="#0284c7" />
+    </g>
+    <text x="58" y="36" font-size="14" font-weight="600" fill="#0f172a">Monitoreo</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">CCTV y GPS 24/7 en ruta</text>
+    <text x="58" y="65" font-size="9.5" font-weight="600" fill="#0284c7">Seguridad Activa</text>
+  </g>
+
+  <!-- MANTENIMIENTO -->
+  <g transform="translate(610, 420)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="215" height="74" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="74" rx="2" fill="#0284c7" />
+    <g transform="translate(14, 20)">
+      <circle cx="17" cy="17" r="17" fill="#f0f9ff" />
+      <path d="M23 11 C21 11 19.5 12.5 19.5 14 C19.5 14.5 19.7 15 20 15.4 L12.5 23 C11.8 23.7 11.8 24.8 12.5 25.5 C13.2 26.2 14.3 26.2 15 25.5 L22.6 18 C23 18.3 23.5 18.5 24 18.5 C25.5 18.5 27 17 27 15" fill="none" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" />
+    </g>
+    <text x="58" y="36" font-size="14" font-weight="600" fill="#0f172a">Mantenimiento</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">Flota y equipos al día</text>
+    <text x="58" y="65" font-size="9.5" font-weight="600" fill="#0284c7">Físico-Mecánicos</text>
+  </g>
+
+
+  <!-- Columna 2 Operaciones: Departamento de Logística, Operadores (Ancho: 225px) -->
+
+  <!-- DEPARTAMENTO DE LOGÍSTICA -->
+  <g transform="translate(840, 320)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="225" height="74" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="74" rx="2" fill="#0ea5e9" />
+    <g transform="translate(14, 20)">
+      <circle cx="17" cy="17" r="17" fill="#f0f9ff" />
+      <path d="M11 12 L17 9 L23 12 L23 22 L17 25 L11 22 Z" fill="none" stroke="#0ea5e9" stroke-width="1.8" />
+      <line x1="17" y1="9" x2="17" y2="25" stroke="#0ea5e9" stroke-width="1.5" stroke-opacity="0.6" />
+      <path d="M11 12 L17 16 L23 12" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-opacity="0.6" />
+    </g>
+    <text x="58" y="36" font-size="13.5" font-weight="600" fill="#0f172a">Depto. de Logística</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">Coordinación de rutas</text>
+    <text x="58" y="65" font-size="9.5" font-weight="600" fill="#0ea5e9">Tiempos y Entregas</text>
+  </g>
+
+  <!-- OPERADORES -->
+  <g transform="translate(840, 420)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="225" height="74" rx="9" fill="url(#gradCard)" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="5" height="74" rx="2" fill="#0ea5e9" />
+    <g transform="translate(14, 20)">
+      <circle cx="17" cy="17" r="17" fill="#f0f9ff" />
+      <circle cx="17" cy="17" r="8.5" fill="none" stroke="#0ea5e9" stroke-width="2" />
+      <circle cx="17" cy="17" r="2.5" fill="#0ea5e9" />
+      <line x1="17" y1="8.5" x2="17" y2="14.5" stroke="#0ea5e9" stroke-width="2" />
+      <line x1="9" y1="19" x2="14.5" y2="17" stroke="#0ea5e9" stroke-width="2" />
+      <line x1="25" y1="19" x2="19.5" y2="17" stroke="#0ea5e9" stroke-width="2" />
+    </g>
+    <text x="58" y="36" font-size="14" font-weight="600" fill="#0f172a">Operadores</text>
+    <text x="58" y="51" font-size="10" font-weight="400" fill="#64748b">Personal altamente calificado</text>
+    <text x="58" y="65" font-size="9.5" font-weight="600" fill="#0ea5e9">Conductores en Ruta</text>
+  </g>
+
+  <!-- Pie de organigrama institucional -->
+  <g transform="translate(550, 620)" text-anchor="middle">
+    <text font-size="11" font-weight="500" fill="#94a3b8" letter-spacing="0.5">LOGÍSTICA Y TRANSPORTE GR • ESTRUCTURA ORGANIZACIONAL</text>
+  </g>
+</svg>

@@ -35,10 +35,22 @@
         sliders[value-1].classList.add('testimony__body--show');
     };
 
-    // Función para iniciar el temporizador
+    // Función para iniciar el temporizador (16 segundos para lectura cómoda)
     const startTimer = () => {
-        intervalId = setInterval(changePage, 8000);
+        clearInterval(intervalId);
+        intervalId = setInterval(changePage, 16000);
     };
+
+    // Pausar cambio automático cuando el usuario pasa el mouse sobre la diapositiva para leer
+    const testimonyContainer = document.querySelector('.testimony__container');
+    if (testimonyContainer) {
+        testimonyContainer.addEventListener('mouseenter', () => {
+            clearInterval(intervalId);
+        });
+        testimonyContainer.addEventListener('mouseleave', () => {
+            startTimer();
+        });
+    }
 
     // Iniciar el temporizador por primera vez
     startTimer();
