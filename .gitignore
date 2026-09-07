@@ -1,0 +1,8 @@
+# Local development server scripts
+server.ps1
+iniciar-servidor.bat
+
+# OS & temporary files
+*.log
+.DS_Store
+Thumbs.db
